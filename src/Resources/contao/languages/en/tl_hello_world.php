@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This file is part of a markocupic Contao Bundle
+ * This file is part of a markocupic Contao Bundle.
  *
- * @copyright  Marko Cupic 2020 <m.cupic@gmx.ch>
+ * (c) Marko Cupic 2020 <m.cupic@gmx.ch>
  * @author     Marko Cupic
  * @package    Contao Hello World Bundle
  * @license    MIT

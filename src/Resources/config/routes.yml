@@ -1,4 +1,4 @@
 # config/routes.yml
-markocupic.contao_hello_world_bundle.controller:
+markocupic_contao_hello_world.controller:
     resource: ../../../src/Controller
     type: annotation

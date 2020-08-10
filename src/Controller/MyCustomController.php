@@ -1,9 +1,9 @@
 <?php
 
 /**
- * This file is part of a markocupic Contao Bundle
+ * This file is part of a markocupic Contao Bundle.
  *
- * @copyright  Marko Cupic 2020 <m.cupic@gmx.ch>
+ * (c) Marko Cupic 2020 <m.cupic@gmx.ch>
  * @author     Marko Cupic
  * @package    Contao Hello World Bundle
  * @license    MIT
@@ -26,7 +26,7 @@ use Twig\Environment as TwigEnvironment;
  * @package Symfony
  *
  * @Route("/my_custom",
- *     name="markocupic.contao_hello_world_bundle.mycustom",
+ *     name="markocupic_contao_hello_world_my_custom",
  *     defaults={
  *         "_scope" = "frontend",
  *         "_token_check" = true
@@ -75,7 +75,9 @@ class MyCustomController extends AbstractController
 
         return new Response($this->twig->render(
             '@MarkocupicContaoHelloWorld/my_custom_route.html.twig',
-            ['animals' => $animals]
+            [
+                'animals' => $animals,
+            ]
         ));
     }
 }
