@@ -24,7 +24,8 @@ jobs:
     
     - uses: shivammathur/setup-php@v2
       with:
-        php-version: '7.4' 
+        php-version: '7.4'
+        ini-values:  'extension=gd2'
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
