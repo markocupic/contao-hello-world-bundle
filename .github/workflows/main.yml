@@ -22,10 +22,13 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     
-    - uses: shivammathur/setup-php@v2
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
       with:
-        php-version: '7.4'
-        ini-values:  'extension=gd2'
+          php-version: 7.3
+          extensions: dom, fileinfo, filter, gd, hash, intl, json, mbstring, pcre, pdo, zlib
+          tools: prestissimo, flex
+          coverage: pcov
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
