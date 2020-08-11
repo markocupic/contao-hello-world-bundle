@@ -13,4 +13,5 @@ services:
     Markocupic\ContaoHelloWorldBundle\Controller\MyCustomController:
         arguments:
             - '@twig'
+        public: true
     
