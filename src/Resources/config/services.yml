@@ -1,12 +1,16 @@
 services:
-    _defaults: { autowire: true, autoconfigure: true, public: true }
 
     # Contao frontend module Markocupic\ContaoHelloWorldBundle\Controller\FrontendModule\HelloWorldModuleController
     Markocupic\ContaoHelloWorldBundle\Controller\FrontendModule\HelloWorldModuleController:
+        arguments:
+            - '@session'
         tags:
             - { name: contao.frontend_module, category: hello_world_modules, template: mod_hello_world_module, type: hello_world_module }
             - { name: container.service_subscriber }
         public: true
 
     # Custom route
-    Markocupic\ContaoHelloWorldBundle\Controller\MyCustomController: ~
+    Markocupic\ContaoHelloWorldBundle\Controller\MyCustomController:
+        arguments:
+            - '@twig'
+    
