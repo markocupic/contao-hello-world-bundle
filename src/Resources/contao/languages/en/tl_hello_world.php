@@ -21,6 +21,7 @@ $GLOBALS['TL_LANG']['tl_hello_world']['second_legend'] = "Erweiterte Einstellung
  * Operations
  */
 $GLOBALS['TL_LANG']['tl_hello_world']['edit'] = ["Datensatz mit ID: %s bearbeiten", "Datensatz mit ID: %s bearbeiten"];
+$GLOBALS['TL_LANG']['tl_hello_world']['copy'] = ["Datensatz mit ID: %s kopieren", "Datensatz mit ID: %s kopieren"];
 $GLOBALS['TL_LANG']['tl_hello_world']['delete'] = ["Datensatz mit ID: %s löschen", "Datensatz mit ID: %s löschen"];
 $GLOBALS['TL_LANG']['tl_hello_world']['show'] = ["Datensatz mit ID: %s ansehen", "Datensatz mit ID: %s ansehen"];
 

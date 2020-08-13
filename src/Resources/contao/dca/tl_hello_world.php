@@ -52,18 +52,23 @@ $GLOBALS['TL_DCA']['tl_hello_world'] = [
         ],
         'operations'        => [
             'edit'   => [
-                'label' => &$GLOBALS['TL_LANG']['tl_sample_table']['edit'],
+                'label' => &$GLOBALS['TL_LANG']['tl_hello_world']['edit'],
                 'href'  => 'act=edit',
                 'icon'  => 'edit.gif'
             ],
+            'copy'   => [
+                'label' => &$GLOBALS['TL_LANG']['tl_hello_world']['copy'],
+                'href'  => 'act=copy',
+                'icon'  => 'copy.gif'
+            ],
             'delete' => [
-                'label'      => &$GLOBALS['TL_LANG']['tl_sample_table']['delete'],
+                'label'      => &$GLOBALS['TL_LANG']['tl_hello_world']['delete'],
                 'href'       => 'act=delete',
                 'icon'       => 'delete.gif',
                 'attributes' => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
             ],
             'show'   => [
-                'label'      => &$GLOBALS['TL_LANG']['tl_sample_table']['show'],
+                'label'      => &$GLOBALS['TL_LANG']['tl_hello_world']['show'],
                 'href'       => 'act=show',
                 'icon'       => 'show.gif',
                 'attributes' => 'style="margin-right:3px"'
@@ -153,7 +158,8 @@ $GLOBALS['TL_DCA']['tl_hello_world'] = [
 ];
 
 /**
- * Class tl_hello_world */
+ * Class tl_hello_world
+ */
 class tl_hello_world extends Contao\Backend
 {
 
