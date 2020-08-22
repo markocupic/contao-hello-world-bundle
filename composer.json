@@ -30,8 +30,7 @@
     "contao/manager-plugin": "^2.3",
     "phpunit/phpunit": "^8.4",
     "symfony/http-client": "4.4.*",
-    "symfony/phpunit-bridge": "4.4.*",
-    "ext-gd": "*"
+    "symfony/phpunit-bridge": "4.4.*"
   },
   "autoload": {
     "psr-4": {
