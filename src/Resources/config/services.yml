@@ -9,9 +9,15 @@ services:
             - { name: container.service_subscriber }
         public: true
 
+    # Contao content element Markocupic\ContaoHelloWorldBundle\Controller\ContentElement\HelloElementController
+    Markocupic\ContaoHelloWorldBundle\Controller\ContentElement\HelloElementController:
+        tags:
+            - { name: contao.content_element, category: hello_elements, template: ce_hello_element, type: hello_element }
+            - { name: container.service_subscriber }
+        public: true
+
     # Custom route
     Markocupic\ContaoHelloWorldBundle\Controller\MyCustomController:
         arguments:
             - '@twig'
         public: true
-    

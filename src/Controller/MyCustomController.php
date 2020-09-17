@@ -74,7 +74,7 @@ class MyCustomController extends AbstractController
         ];
 
         return new Response($this->twig->render(
-            '@MarkocupicContaoHelloWorld/MyCustom/my_custom.twig',
+            '@MarkocupicContaoHelloWorld/MyCustom/my_custom.html.twig',
             [
                 'animals' => $animals,
             ]

@@ -12,11 +12,17 @@
  */
 
 /**
+ * Content element
+ */
+$GLOBALS['TL_LANG']['CTE']['hello_elements'] = 'Hello World Elemente';
+$GLOBALS['TL_LANG']['CTE']['hello_element'] = ['Hello Element', 'Fügen Sie ein Hello-Element ein.'];
+
+/**
  * Miscelaneous
  */
 //$GLOBALS['TL_LANG']['MSC'][''] = '';
 
 /**
-* Errors
-*/
+ * Errors
+ */
 //$GLOBALS['TL_LANG']['ERR'][''] = '';

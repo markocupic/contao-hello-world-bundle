@@ -12,13 +12,6 @@
  */
 
 /**
- * Backend modules
+ * Content elements
  */
-$GLOBALS['BE_MOD']['hello_world_modules']['hello_world'] = [
-    'tables' => ['tl_hello_world']
-];
-
-/**
- * Models
- */
-$GLOBALS['TL_MODELS']['tl_hello_world'] = \Markocupic\ContaoHelloWorldBundle\Model\HelloWorldModel::class;
+$GLOBALS['TL_DCA']['tl_content']['palettes']['hello_element'] = '{type_legend},type,headline;{text_legend},text;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
