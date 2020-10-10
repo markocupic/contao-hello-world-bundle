@@ -1,16 +1,12 @@
 <?php
 
-/**
- * This file is part of a markocupic Contao Bundle.
- *
+/*
+ * This file is part of Contao Hello World Bundle.
+ * 
  * (c) Marko Cupic 2020 <m.cupic@gmx.ch>
- * @author     Marko Cupic
- * @package    Contao Hello World Bundle
- * @license    MIT
- * @see        https://github.com/markocupic/contao-hello-world-bundle
- *
+ * @license MIT
+ * @link https://github.com/markocupic/contao-hello-world-bundle
  */
-
 declare(strict_types=1);
 
 namespace Markocupic\ContaoHelloWorldBundle\Tests\ContaoManager;

@@ -1,29 +1,25 @@
 <?php
 
-/**
- * This file is part of a markocupic Contao Bundle.
+declare(strict_types=1);
+
+/*
+ * This file is part of Contao Hello World Bundle.
  *
  * (c) Marko Cupic 2020 <m.cupic@gmx.ch>
- * @author     Marko Cupic
- * @package    Contao Hello World Bundle
- * @license    MIT
- * @see        https://github.com/markocupic/contao-hello-world-bundle
+ * @license MIT
+ * @link https://github.com/markocupic/contao-hello-world-bundle
  *
  */
-
-declare(strict_types=1);
 
 namespace Markocupic\ContaoHelloWorldBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment as TwigEnvironment;
 
 /**
- * Class MyCustomController
- *
- * @package Symfony
+ * Class MyCustomController.
  *
  * @Route("/my_custom",
  *     name="markocupic_contao_hello_world_my_custom",
@@ -35,12 +31,13 @@ use Twig\Environment as TwigEnvironment;
  */
 class MyCustomController extends AbstractController
 {
-    /** @var TwigEnvironment */
+    /**
+     * @var TwigEnvironment
+     */
     private $twig;
 
     /**
      * MyCustomController constructor.
-     * @param TwigEnvironment $twig
      */
     public function __construct(TwigEnvironment $twig)
     {
@@ -48,28 +45,24 @@ class MyCustomController extends AbstractController
     }
 
     /**
-     * @return Response
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
+     * Generate the response.
      */
     public function __invoke()
     {
         $animals = [
-
             [
                 'species' => 'dogs',
-                'color'   => 'white'
+                'color' => 'white',
             ],
             [
                 'species' => 'birds',
-                'color'   => 'black'
+                'color' => 'black',
             ], [
                 'species' => 'cats',
-                'color'   => 'pink'
+                'color' => 'pink',
             ], [
                 'species' => 'cows',
-                'color'   => 'yellow'
+                'color' => 'yellow',
             ],
         ];
 

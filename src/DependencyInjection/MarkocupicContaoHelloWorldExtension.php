@@ -1,17 +1,15 @@
 <?php
 
-/**
- * This file is part of a markocupic Contao Bundle.
+declare(strict_types=1);
+
+/*
+ * This file is part of Contao Hello World Bundle.
  *
  * (c) Marko Cupic 2020 <m.cupic@gmx.ch>
- * @author     Marko Cupic
- * @package    Contao Hello World Bundle
- * @license    MIT
- * @see        https://github.com/markocupic/contao-hello-world-bundle
+ * @license MIT
+ * @link https://github.com/markocupic/contao-hello-world-bundle
  *
  */
-
-declare(strict_types=1);
 
 namespace Markocupic\ContaoHelloWorldBundle\DependencyInjection;
 
@@ -21,24 +19,18 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 /**
- * Class MarkocupicContaoHelloWorldExtension
- *
- * @package Markocupic\ContaoHelloWorldBundle\DependencyInjection
+ * Class MarkocupicContaoHelloWorldExtension.
  */
 class MarkocupicContaoHelloWorldExtension extends Extension
 {
-
     /**
-     * @param array $configs
-     * @param ContainerBuilder $container
      * @throws \Exception
      */
     public function load(array $configs, ContainerBuilder $container): void
     {
-
         $loader = new YamlFileLoader(
             $container,
-            new FileLocator(__DIR__ . '/../Resources/config')
+            new FileLocator(__DIR__.'/../Resources/config')
         );
 
         $loader->load('parameters.yml');

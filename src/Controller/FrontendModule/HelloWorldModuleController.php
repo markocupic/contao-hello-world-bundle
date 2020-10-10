@@ -1,17 +1,15 @@
 <?php
 
-/**
- * This file is part of a markocupic Contao Bundle.
+declare(strict_types=1);
+
+/*
+ * This file is part of Contao Hello World Bundle.
  *
  * (c) Marko Cupic 2020 <m.cupic@gmx.ch>
- * @author     Marko Cupic
- * @package    Contao Hello World Bundle
- * @license    MIT
- * @see        https://github.com/markocupic/contao-hello-world-bundle
+ * @license MIT
+ * @link https://github.com/markocupic/contao-hello-world-bundle
  *
  */
-
-declare(strict_types=1);
 
 namespace Markocupic\ContaoHelloWorldBundle\Controller\FrontendModule;
 
@@ -31,23 +29,22 @@ use Symfony\Component\Security\Core\Security;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
- * Class HelloWorldModuleController
- *
- * @package Markocupic\ContaoHelloWorldBundle\Controller\FrontendModule
+ * Class HelloWorldModuleController.
  */
 class HelloWorldModuleController extends AbstractFrontendModuleController
 {
-
-    /** @var SessionInterface */
+    /**
+     * @var SessionInterface
+     */
     protected $session;
 
-    /** @var PageModel */
+    /**
+     * @var PageModel
+     */
     protected $page;
 
     /**
      * HelloWorldModuleController constructor.
-     *
-     * @param SessionInterface $session
      */
     public function __construct(SessionInterface $session)
     {
@@ -56,22 +53,14 @@ class HelloWorldModuleController extends AbstractFrontendModuleController
 
     /**
      * This method extends the parent __invoke method,
-     * its usage is usually not necessary
-     *
-     * @param Request $request
-     * @param ModuleModel $model
-     * @param string $section
-     * @param array|null $classes
-     * @param PageModel|null $page
-     * @return Response
+     * its usage is usually not necessary.
      */
     public function __invoke(Request $request, ModuleModel $model, string $section, array $classes = null, PageModel $page = null): Response
     {
         // Get the page model
         $this->page = $page;
 
-        if ($this->page instanceof PageModel && $this->get('contao.routing.scope_matcher')->isFrontendRequest($request))
-        {
+        if ($this->page instanceof PageModel && $this->get('contao.routing.scope_matcher')->isFrontendRequest($request)) {
             // If TL_MODE === 'FE'
             $this->page->loadDetails();
         }
@@ -80,9 +69,7 @@ class HelloWorldModuleController extends AbstractFrontendModuleController
     }
 
     /**
-     * Lazyload some services
-     *
-     * @return array
+     * Lazyload some services.
      */
     public static function getSubscribedServices(): array
     {
@@ -98,17 +85,14 @@ class HelloWorldModuleController extends AbstractFrontendModuleController
     }
 
     /**
-     * @param Template $template
-     * @param ModuleModel $model
-     * @param Request $request
-     * @return null|Response
+     * Generate the module.
      */
     protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
     {
         $userFirstname = 'DUDE';
         $user = $this->get('security.helper')->getUser();
-        if ($user instanceof FrontendUser)
-        {
+
+        if ($user instanceof FrontendUser) {
             $userFirstname = $user->firstname;
         }
 
@@ -116,16 +100,17 @@ class HelloWorldModuleController extends AbstractFrontendModuleController
         $dateAdapter = $this->get('contao.framework')->getAdapter(Date::class);
         $intWeekday = $dateAdapter->parse('w');
         $translator = $this->get('translator');
-        $strWeekday = $translator->trans('DAYS.' . $intWeekday, [], 'contao_default');
+        $strWeekday = $translator->trans('DAYS.'.$intWeekday, [], 'contao_default');
 
         $arrGuests = [];
         $stmt = $this->get('database_connection')
             ->executeQuery(
                 'SELECT * FROM tl_member WHERE gender=? ORDER BY lastname',
                 ['female']
-            );
-        while (false !== ($objMember = $stmt->fetch(\PDO::FETCH_OBJ)))
-        {
+            )
+        ;
+
+        while (false !== ($objMember = $stmt->fetch(\PDO::FETCH_OBJ))) {
             $arrGuests[] = $objMember->firstname;
         }
 
@@ -134,7 +119,7 @@ class HelloWorldModuleController extends AbstractFrontendModuleController
             $userFirstname, $strWeekday
         );
 
-        $template->helloText = 'Our guests today are: ' . implode(', ', $arrGuests);
+        $template->helloText = 'Our guests today are: '.implode(', ', $arrGuests);
 
         return $template->getResponse();
     }

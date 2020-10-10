@@ -1,17 +1,15 @@
 <?php
 
-/**
- * This file is part of a markocupic Contao Bundle.
+declare(strict_types=1);
+
+/*
+ * This file is part of Contao Hello World Bundle.
  *
  * (c) Marko Cupic 2020 <m.cupic@gmx.ch>
- * @author     Marko Cupic
- * @package    Contao Hello World Bundle
- * @license    MIT
- * @see        https://github.com/markocupic/contao-hello-world-bundle
+ * @license MIT
+ * @link https://github.com/markocupic/contao-hello-world-bundle
  *
  */
-
-declare(strict_types=1);
 
 namespace Markocupic\ContaoHelloWorldBundle\ContaoManager;
 
@@ -21,21 +19,18 @@ use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Component\Routing\RouteCollection;
 
 /**
- * Class Plugin
- *
- * @package Markocupic\ContaoHelloWorldBundle\ContaoManager
+ * Class Plugin.
  */
 class Plugin implements BundlePluginInterface, RoutingPluginInterface
 {
     /**
-     * @param ParserInterface $parser
      * @return array
      */
     public function getBundles(ParserInterface $parser)
     {
-
         return [
             BundleConfig::create('Markocupic\ContaoHelloWorldBundle\MarkocupicContaoHelloWorldBundle')
                 ->setLoadAfter(['Contao\CoreBundle\ContaoCoreBundle']),
@@ -43,18 +38,15 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
     }
 
     /**
-     * @param LoaderResolverInterface $resolver
-     * @param KernelInterface $kernel
-     * @return null|\Symfony\Component\Routing\RouteCollection
      * @throws \Exception
+     *
+     * @return RouteCollection|null
      */
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
     {
-
         return $resolver
-            ->resolve(__DIR__ . '/../Resources/config/routes.yml')
-            ->load(__DIR__ . '/../Resources/config/routes.yml');
+            ->resolve(__DIR__.'/../Resources/config/routes.yml')
+            ->load(__DIR__.'/../Resources/config/routes.yml')
+        ;
     }
-
 }
-
