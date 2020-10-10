@@ -7,8 +7,9 @@ declare(strict_types=1);
  *
  * (c) Marko Cupic 2020 <m.cupic@gmx.ch>
  * @license MIT
+ * For the full copyright and license information,
+ * please view the LICENSE file that was distributed with this source code.
  * @link https://github.com/markocupic/contao-hello-world-bundle
- *
  */
 
 namespace Markocupic\ContaoHelloWorldBundle\ContaoManager;
@@ -40,7 +41,7 @@ class Plugin implements BundlePluginInterface, RoutingPluginInterface
     /**
      * @throws \Exception
      *
-     * @return RouteCollection|null
+     * @return RouteCollection|null *
      */
     public function getRouteCollection(LoaderResolverInterface $resolver, KernelInterface $kernel)
     {
